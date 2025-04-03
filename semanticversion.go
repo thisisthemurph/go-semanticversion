@@ -15,11 +15,6 @@ type SemanticVersion struct {
 
 // String returns the string representation of a SemanticVersion.
 func (sv SemanticVersion) String() string {
-	if sv.Minor == 0 && sv.Patch == 0 {
-		return fmt.Sprintf("%d.0.0", sv.Major)
-	} else if sv.Patch == 0 {
-		return fmt.Sprintf("%d.%d.0", sv.Major, sv.Minor)
-	}
 	return fmt.Sprintf("%d.%d.%d", sv.Major, sv.Minor, sv.Patch)
 }
 
